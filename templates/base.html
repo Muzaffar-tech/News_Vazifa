@@ -1,0 +1,84 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>News  HTML-5 Template </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% include 'components/_style.html' %}
+    <style>
+            .success{
+                color: green;
+            }
+            .warning{
+                color: yellow;
+            }
+        </style>
+
+
+</head>
+
+<body>
+
+
+    <!-- Header Start -->
+    {% include 'components/_header.html' %}
+    <!-- Header End -->
+
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+
+    {% block content %}
+    {% endblock content %}
+
+    {% block category %}
+    {% endblock category %}
+
+    {% block about %}
+    {% endblock about %}
+
+
+    {% block area %}
+    {% endblock area %}
+
+
+
+    {% block detail_area %}
+    {% endblock detail_area %}
+
+    {% block contact %}
+    {% endblock contact %}
+
+    {% block elements %}
+    {% endblock elements %}
+
+    {% block latest_news %}
+    {% endblock latest_news %}
+
+    <!-- Preloader Start -->
+    {% include 'components/_preloader.html' %}
+    <!-- Preloader Start -->
+
+
+
+    <!-- Footer Start-->
+    {% include 'components/_footer.html' %}
+    <!-- Footer End-->
+
+<!-- Search model Begin -->
+  {% include 'components/_search.html' %}
+<!-- Search model end -->
+
+<!-- JS here -->
+  {% include 'components/_scripts.html' %}
+
+</body>
+</html>
